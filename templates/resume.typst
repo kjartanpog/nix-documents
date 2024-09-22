@@ -1,0 +1,112 @@
+$definitions.typst()$
+
+#show terms: it => {
+  it.children
+    .map(child => [
+      #strong[#child.term]
+      #block(inset: (left: 1.5em, top: -0.4em))[#child.description]
+      ])
+    .join()
+}
+
+#set table(
+  inset: 6pt,
+  stroke: none
+)
+
+$if(template)$
+#import "$template$": conf
+$else$
+$template.typst()$
+$endif$
+
+#show: doc => conf(
+$if(title)$
+  title: [$title$],
+$endif$
+$if(subtitle)$
+  subtitle: [$subtitle$],
+$endif$
+$if(name)$
+authors: (
+    (
+      name: "$name$ $if(surname)$$surname$$endif$",
+      affiliation: "$position$",
+      email: "$email$",
+    ),
+  ),
+$endif$
+$if(keywords)$
+  keywords: ($for(keywords)$$keyword$$sep$,$endfor$),
+$endif$
+$if(date)$
+  date: [$date$],
+$endif$
+$if(lang)$
+  lang: "$lang$",
+$endif$
+$if(region)$
+  region: "$region$",
+$endif$
+$if(aboutme)$
+  abstract: [$aboutme$],
+$endif$
+$if(margin)$
+  margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
+$endif$
+$if(papersize)$
+  paper: "$papersize$",
+$endif$
+$if(mainfont)$
+  font: ("$mainfont$",),
+$endif$
+$if(fontsize)$
+  fontsize: $fontsize$,
+$endif$
+$if(section-numbering)$
+  sectionnumbering: "$section-numbering$",
+$endif$
+  cols: $if(columns)$$columns$$else$1$endif$,
+  doc,
+)
+
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+$if(picture)$
+#figure(
+  image("$picture$", width: 5cm),
+  caption: [That's me!],
+)
+$endif$
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+#outline(
+  title: auto,
+  depth: $toc-depth$
+);
+$endif$
+
+$body$
+
+$if(citations)$
+$if(csl)$
+
+#set bibliography(style: "$csl$")
+$elseif(bibliographystyle)$
+
+#set bibliography(style: "$bibliographystyle$")
+$endif$
+$if(bibliography)$
+
+#bibliography($for(bibliography)$"$bibliography$"$sep$,$endfor$)
+$endif$
+$endif$
+$for(include-after)$
+
+$include-after$
+$endfor$

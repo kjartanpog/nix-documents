@@ -1,0 +1,95 @@
+{
+  "nodes": {
+    "business-card": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646603232,
+        "narHash": "sha256-wX+2RRtJXlxcHHPAvzNFnxpIR9AysLoJpuXqUIcdsUk=",
+        "owner": "opieters",
+        "repo": "business-card",
+        "rev": "d35ba49f37c25338e9c9ca2b8835863bdaf29f42",
+        "type": "github"
+      },
+      "original": {
+        "owner": "opieters",
+        "repo": "business-card",
+        "type": "github"
+      }
+    },
+    "invoice": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722433502,
+        "narHash": "sha256-y4qSCnkS2EY/GjdD8vxq33GVf7jAxplpLWpLycbz8SE=",
+        "owner": "mrzool",
+        "repo": "invoice-boilerplate",
+        "rev": "8ef13f71b4d63dc29ebb67915fecb35fa3df9be2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mrzool",
+        "repo": "invoice-boilerplate",
+        "type": "github"
+      }
+    },
+    "moderncv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723222374,
+        "narHash": "sha256-LKuXApB94Ep97xWxY57jwbqT1t/oz8HjyHe4Y8/mO/Q=",
+        "owner": "moderncv",
+        "repo": "moderncv",
+        "rev": "cdf027a9da1f16038c2df3c02147b3b316741dac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moderncv",
+        "repo": "moderncv",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1725103162,
+        "narHash": "sha256-Ym04C5+qovuQDYL/rKWSR+WESseQBbNAe5DsXNx5trY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "12228ff1752d7b7624a54e9c1af4b222b3c1073b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pandocTemplates": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722211471,
+        "narHash": "sha256-6vwiW9e8fP2rv5wghjrwpJ60s8NMb8cRLc7J1FY30K4=",
+        "owner": "jgm",
+        "repo": "pandoc-templates",
+        "rev": "3430359b4c688dbedaa23d76575184191a12c4d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jgm",
+        "repo": "pandoc-templates",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "business-card": "business-card",
+        "invoice": "invoice",
+        "moderncv": "moderncv",
+        "nixpkgs": "nixpkgs",
+        "pandocTemplates": "pandocTemplates"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
